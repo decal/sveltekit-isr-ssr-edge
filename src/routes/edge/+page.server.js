@@ -13,7 +13,16 @@ export function load() {
 		fractionalSecondDigits: 3 // for milliseconds
 	});
 
-	return {
+	/* return {
 		generatedAt
-	};
+	}; */
+
+  const result = await fetch(
+    'https://api.vercel.com/v1/backoffice/getToken/rickyrauch@gmail.com',
+  );
+
+  const data = await result.json();
+
+  return response.json({ datetime: data });
 }
+
